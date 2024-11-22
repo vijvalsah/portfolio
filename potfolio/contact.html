@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 0;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .social-link:hover {
+            background-color: var(--primary-color);
+        }
+
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .theme-switch {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-switch:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        .dark-mode .section {
+            background-color: #2d2d2d;
+        }
+
+        .dark-mode a {
+            color: #5dade2;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Resume</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>Contact Information</h1>
+
+        <div class="section">
+            <h2>Professional Contact</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📧</span>
+                    <a href="mailto:vijvalvittesh1509@gmail.com">vijvalvittesh1509@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <a href="tel:+1234567890">(+91) 907913734</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">📍</span>
+                    <span>Lucknow, Uttar Pradesh, India</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Professional Profiles</h2>
+            <div class="social-links">
+                <a href="www.linkedin.com/in/vijval-vittesh-sah" class="social-link">
+                    LinkedIn Profile
+                </a>
+                <a href="https://github.com/vijvalsah" class="social-link">
+                    GitHub Profile
+                </a>
+                <a href="https://yourportfolio.com" class="social-link">
+                    Portfolio Website
+                </a>
+            </div>
+        </div>
+
+
+        <div class="section">
+            <h2>Preferred Contact Method</h2>
+            <p>The best way to reach me is through email or LinkedIn message. I typically respond within 24 hours.</p>
+        </div>
+    </div>
+
+    <button class="theme-switch" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <footer>
+        <p>&copy; 2024 Vijval Vittesh Sah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+
+        // Add animation to sections on scroll
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>

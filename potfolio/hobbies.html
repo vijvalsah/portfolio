@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies - Resume</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --background-color: #f9f9f9;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .hobby-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s, background-color 0.3s, color 0.3s;
+        }
+
+        .hobby-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .hobby-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hobby-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .hobby-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Dark mode toggle */
+        .theme-switch {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .theme-switch:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --background-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        body.dark-mode .hobby-card {
+            background-color: #2d2d2d;
+            color: var(--text-color);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Resume</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h1>My Hobbies & Interests</h1>
+
+        <div class="hobby-grid">
+            <div class="hobby-card">
+                <div class="hobby-icon">🎨</div>
+                <h3>Creative Pursuits</h3>
+                <p>I enjoy graphic design and event management,leading design teams to create promotional materials. I also have a passion for photography, capturing natures beauty.</p>
+                <ul class="achievement-list">
+                    <li>Led Design Team</li>
+                    <li>Photography Enthusiast</li>
+                </ul>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-icon">🏃‍♂️</div>
+                <h3>Sports & Fitness</h3>
+                <p>I am an avid Table Tennis player and enjoy staying active through regular physical exercise. I also take part in other sports such as football to improve my endurance and agility.</p>
+                <ul class="achievement-list">
+                    <li>Won multiple medals in college level Table Tennis tournaments.</li>
+                    <li>Represented my school in state level competitions</li>
+                </ul>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-icon">🤝</div>
+                <h3>Volunteering & Community</h3>
+                <p>I am actively involved in organizing college events and have volunteered at local community initiatives to support education and youth development.</p>
+                <ul class="achievement-list">
+                    <li>Organized and managed college sports and cultural events as the Event Coordinator.</li>
+                    <li>Assisted in local youth education programs during my time in school.</li>
+                </ul>
+            </div>
+
+            <div class="hobby-card">
+                <div class="hobby-icon">📚</div>
+                <h3>Other Interests</h3>
+                <p>I have a keen interest in travel and exploring new cultures, and I enjoy attending workshops to enhance my professional skills.</p>
+                <ul class="achievement-list">
+                    <li>Explored various treks and cultural destinations.</li>
+                    <li>Attended skill-building workshops for personal and professional growth.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-switch" onclick="toggleTheme()">Toggle Dark Mode</button>
+
+    <footer>
+        <p>&copy; 2024 Vijval Vittesh Sah. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        function toggleTheme() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+        }
+    </script>
+</body>
+</html>
